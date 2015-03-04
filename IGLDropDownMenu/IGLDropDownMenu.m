@@ -100,6 +100,11 @@
     self.flipWhenToggleView = NO;
     _expanding = NO;
     self.useSpringAnimation = YES;
+    self.useShadow = YES;
+    
+    self.menuItemBgColor = [UIColor whiteColor];
+    self.textColor = [UIColor grayColor];
+    self.textFont = [UIFont fontWithName:@"Helvetica" size:17.0];
     
     self.selectedIndex = -1;
 }
@@ -126,6 +131,9 @@
     self.menuButton.iconImage = self.menuIconImage;
     self.menuButton.text = self.menuText;
     self.menuButton.paddingLeft = self.paddingLeft;
+    self.menuButton.bgColor = self.menuItemBgColor;
+    self.menuButton.textColor = self.textColor;
+    self.menuButton.textFont = self.textFont;
     [self.menuButton setFrame:CGRectMake(self.offsetX + 0, 0, self.itemSize.width, self.itemSize.height)];
     switch (self.direction) {
         case IGLDropDownMenuDirectionDown:
@@ -144,6 +152,10 @@
         IGLDropDownItem *item = self.dropDownItems[i];
         item.index = i;
         item.paddingLeft = self.paddingLeft;
+        item.useShaow = self.shouldDrawShadow;
+        item.bgColor = self.menuItemBgColor;
+        item.textColor = self.textColor;
+        item.textFont = self.textFont;
         [item addTarget:self action:@selector(itemClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self setUpFoldItem:item];
         [self insertSubview:item belowSubview:self.menuButton];

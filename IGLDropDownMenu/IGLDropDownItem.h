@@ -19,6 +19,14 @@
 
 @property (nonatomic, assign) CGFloat paddingLeft;
 
+@property (nonatomic, assign) BOOL useShaow;
+
+@property (nonatomic, strong) UIColor *bgColor;
+
+@property (nonatomic, strong) UIColor *textColor;
+
+@property (nonatomic, strong) UIFont *textFont;
+
 - (id)copyWithZone:(NSZone *)zone;
 
 @end

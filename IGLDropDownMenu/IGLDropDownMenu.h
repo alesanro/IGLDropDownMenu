@@ -57,9 +57,15 @@ typedef NS_ENUM(NSUInteger, IGLDropDownMenuDirection) {
 @property (nonatomic, assign) CGFloat slidingInOffset;
 @property (nonatomic, assign) CGFloat gutterY;
 @property (nonatomic, assign) CGFloat alphaOnFold;
+
+@property (nonatomic, strong) UIColor *menuItemBgColor;
+@property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, strong) UIFont *textFont;
+
 @property (nonatomic, assign, getter = isExpanding) BOOL expanding;
 @property (nonatomic, assign, getter = shouldFlipWhenToggleView) BOOL flipWhenToggleView;
 @property (nonatomic, assign, getter = shouldUseSpringAnimation) BOOL useSpringAnimation;
+@property (nonatomic, assign, getter= shouldDrawShadow) BOOL useShadow;
 
 @property (nonatomic, assign) id<IGLDropDownMenuDelegate> delegate;
 

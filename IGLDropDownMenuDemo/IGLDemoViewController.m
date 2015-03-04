@@ -44,6 +44,12 @@
                            @{@"image":@"snow.png",@"title":@"Snow"},
                            @{@"image":@"rain.png",@"title":@"Rain"},
                            @{@"image":@"windy.png",@"title":@"Windy"},];
+    
+    dataArray = @[@{@"title":@"Sun"},
+                           @{@"title":@"Clouds"},
+                           @{@"title":@"Snow"},
+                           @{@"title":@"Rain"},
+                           @{@"title":@"Windy"},];
     NSMutableArray *dropdownItems = [[NSMutableArray alloc] init];
     for (int i = 0; i < dataArray.count; i++) {
         NSDictionary *dict = dataArray[i];
@@ -122,8 +128,12 @@
 
 - (void)setUpParamsForDemo1
 {
-    self.dropDownMenu.type = IGLDropDownMenuTypeStack;
-    self.dropDownMenu.gutterY = 5;
+    self.dropDownMenu.type = IGLDropDownMenuTypeNormal;
+    self.dropDownMenu.useSpringAnimation = NO;
+    self.dropDownMenu.useShadow = NO;
+    self.dropDownMenu.gutterY = 2;
+    self.dropDownMenu.animationDuration = 0.2;
+    self.dropDownMenu.menuItemBgColor = [UIColor whiteColor];
 }
 
 - (void)setUpParamsForDemo2
