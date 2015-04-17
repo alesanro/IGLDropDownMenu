@@ -151,11 +151,11 @@
     for (int i = (int)self.dropDownItems.count - 1; i >= 0; i--) {
         IGLDropDownItem *item = self.dropDownItems[i];
         item.index = i;
-        item.paddingLeft = self.paddingLeft;
-        item.useShaow = self.shouldDrawShadow;
-        item.bgColor = self.menuItemBgColor;
-        item.textColor = self.textColor;
-        item.textFont = self.textFont;
+        item.paddingLeft = item.paddingLeft ?: self.paddingLeft; 
+        item.useShaow = item.useShaow ?: self.shouldDrawShadow; 
+        item.bgColor = item.bgColor ?: self.menuItemBgColor; 
+        item.textColor = item.textColor ?: self.textColor; 
+        item.textFont = item.textFont ?: self.textFont;
         [item addTarget:self action:@selector(itemClicked:) forControlEvents:UIControlEventTouchUpInside];
         [self setUpFoldItem:item];
         [self insertSubview:item belowSubview:self.menuButton];
