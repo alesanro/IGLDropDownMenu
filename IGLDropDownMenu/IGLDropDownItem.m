@@ -101,6 +101,8 @@
     } else {
         [self.textLabel setFrame:CGRectMake(self.paddingLeft, 0, selfWidth, selfHeight)];
     }
+    
+    [self.bgView setFrame:self.bounds];
 }
 
 - (void)setPaddingLeft:(CGFloat)paddingLeft
